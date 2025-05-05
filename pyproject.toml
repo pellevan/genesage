@@ -1,0 +1,10 @@
+[project]
+name = "genesage"
+version = "0.1.0"
+description = "CLI tool for gene prediction and annotation from genome assemblies"
+authors = [{ name = "Your Name", email = "your@email.com" }]
+dependencies = ["biopython"]
+requires-python = ">=3.7"
+
+[project.scripts]
+genesage = "genesage.cli:main"

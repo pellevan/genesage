@@ -1,0 +1,53 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# VSCode and IDE config
+.vscode/
+.idea/
+
+# Output directories and intermediate results
+results/
+output/
+*.gff
+*.faa
+*.ffn
+*.tsv
+*.blastn
+*.log
+
+# BLAST and Prodigal files
+*.nhr
+*.nin
+*.nsq
+*.log
+*.tmp
+
+# Environment files
+.env
+.venv/
+venv/
+*.env
+*.conda
+*.mamba
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Test or example outputs
+test_output/
+example_data/*_output/
+
+# Jupyter notebooks (if any)
+*.ipynb_checkpoints/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
