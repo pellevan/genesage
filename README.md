@@ -19,6 +19,12 @@ cd genesage
 pip install .
 ```
 
+## Express Installation (not recommended) with `environment.yml`
+```bash
+conda env create -f environment.yml
+conda activate genesage-env
+```
+
 Now you can run the tool with:
 ```bash
 genesage --input genome.fasta --db db_folder_or_file --outdir results/
