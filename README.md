@@ -1,4 +1,4 @@
-# 🐝 GeneSage
+# 🧙 GeneSage
 
 **GeneSage** is a lightweight CLI tool for predicting genes from genome assemblies and annotating them using known `.ffn` gene databases.
 
