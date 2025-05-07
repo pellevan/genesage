@@ -23,12 +23,22 @@ def parse_blast_output(blast_file, output_tsv):
         for qid, info in annotations.items():
             out.write(f"{qid}\t{info['subject']}\t{info['identity']}\t{info['evalue']}\t{info['bitscore']}\n")
 
-def compute_stats(blast_file, output_txt):
-    total = 0
-    annotated = 0
-    with open(blast_file) as f:
-        for _ in f:
-            annotated += 1
+def compute_stats(fasta_file, annotation_file, output_txt):
+    # Count total predicted genes
+    with open(fasta_file) as f:
+        total = sum(1 for line in f if line.startswith(">"))
+
+    # Count unique annotated genes
+    annotated_genes = set()
+    with open(annotation_file) as f:
+        for line in f:
+            if line.strip():
+                query_id = line.split('\t')[0]
+                annotated_genes.add(query_id)
+
+    annotated = len(annotated_genes)
+
+    # Write stats
     with open(output_txt, 'w') as out:
-        out.write(f"Total genes predicted: {annotated}\n")
+        out.write(f"Total genes predicted: {total}\n")
         out.write(f"Annotated genes: {annotated}\n")

@@ -40,9 +40,9 @@ def main():
     annotation_file = os.path.join(args.outdir, "annotations.tsv")
     parse_blast_output(blast_output, annotation_file)
     stats_file = os.path.join(args.outdir, "summary_stats.txt")
-    compute_stats(blast_output, stats_file)
+    compute_stats(f"{prefix}.ffn", annotation_file, stats_file)
 
-    print(f"[\u2713] Done. Results saved in {args.outdir}")
+    print(f"[✓] Done. Results saved in {args.outdir}")
 
 if __name__ == "__main__":
     main()
